@@ -1,0 +1,152 @@
+2026-05-06 01:59:34 | INFO | __main__:main:430 - Step 1: Initializing all components
+2026-05-06 01:59:34 | INFO | __main__:initialize_components:221 - Initializing SME Financial Platform components...
+2026-05-06 01:59:34 | INFO | __main__:initialize_components:225 - API key status: {'anthropic': False, 'neo4j': True, 'milvus': True}
+2026-05-06 01:59:34 | WARNING | __main__:initialize_components:227 - ANTHROPIC_API_KEY not configured. LLM features will use mock responses. Set ANTHROPIC_API_KEY in .env to enable full functionality.
+2026-05-06 01:59:34 | INFO | __main__:initialize_components:235 - Creating hybrid retriever...
+2026-05-06 01:59:40 | WARNING | retrieval.milvus_client:_try_connect:159 - Milvus not available (<MilvusException: (code=2, message=Fail connecting to server on localhost:19530, illegal connection params or server unavailable)>). Using in-memory fallback storage.
+2026-05-06 01:59:42 | DEBUG | retrieval.bm25_retriever:_init_jieba:70 - jieba initialized with financial domain vocabulary
+2026-05-06 01:59:42 | DEBUG | retrieval.rule_filter:__init__:99 - RuleFilter initialized: industry_whitelist=17, max_risk=high
+2026-05-06 02:00:21 | INFO | retrieval.reranker:_load_model:47 - Cross-encoder reranker loaded: cross-encoder/ms-marco-MiniLM-L-6-v2
+2026-05-06 02:00:38 | INFO | retrieval.hybrid_retriever:_load:40 - Embedding model loaded: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-06 02:00:38 | INFO | retrieval.hybrid_retriever:__init__:115 - HybridRetriever initialized
+2026-05-06 02:00:39 | INFO | __main__:initialize_components:243 - Creating QA agent...
+2026-05-06 02:00:40 | INFO | agents.qa_agent:_init_client:87 - QAAgent: Anthropic client initialized
+2026-05-06 02:00:40 | INFO | __main__:initialize_components:246 - Creating Credit agent...
+2026-05-06 02:00:40 | INFO | __main__:initialize_components:249 - Creating Graph agent...
+2026-05-06 02:00:40 | INFO | agents.graph_agent:__init__:130 - GraphAgent initialized
+2026-05-06 02:00:40 | INFO | __main__:initialize_components:256 - Creating Planner and Dispatcher...
+2026-05-06 02:05:29 | INFO | __main__:main:430 - Step 1: Initializing all components
+2026-05-06 02:05:29 | INFO | __main__:initialize_components:221 - Initializing SME Financial Platform components...
+2026-05-06 02:05:29 | INFO | __main__:initialize_components:225 - API key status: {'anthropic': False, 'neo4j': True, 'milvus': True}
+2026-05-06 02:05:29 | WARNING | __main__:initialize_components:227 - ANTHROPIC_API_KEY not configured. LLM features will use mock responses. Set ANTHROPIC_API_KEY in .env to enable full functionality.
+2026-05-06 02:05:29 | INFO | __main__:initialize_components:235 - Creating hybrid retriever...
+2026-05-06 02:05:35 | WARNING | retrieval.milvus_client:_try_connect:159 - Milvus not available (<MilvusException: (code=2, message=Fail connecting to server on localhost:19530, illegal connection params or server unavailable)>). Using in-memory fallback storage.
+2026-05-06 02:05:35 | DEBUG | retrieval.bm25_retriever:_init_jieba:70 - jieba initialized with financial domain vocabulary
+2026-05-06 02:05:35 | DEBUG | retrieval.rule_filter:__init__:99 - RuleFilter initialized: industry_whitelist=17, max_risk=high
+2026-05-06 02:05:49 | INFO | retrieval.reranker:_load_model:47 - Cross-encoder reranker loaded: cross-encoder/ms-marco-MiniLM-L-6-v2
+2026-05-06 02:05:58 | INFO | retrieval.hybrid_retriever:_load:40 - Embedding model loaded: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-06 02:05:58 | INFO | retrieval.hybrid_retriever:__init__:115 - HybridRetriever initialized
+2026-05-06 02:06:01 | INFO | __main__:initialize_components:243 - Creating QA agent...
+2026-05-06 02:06:01 | INFO | agents.qa_agent:_init_client:87 - QAAgent: Anthropic client initialized
+2026-05-06 02:06:01 | INFO | __main__:initialize_components:246 - Creating Credit agent...
+2026-05-06 02:06:01 | INFO | __main__:initialize_components:249 - Creating Graph agent...
+2026-05-06 02:06:01 | INFO | agents.graph_agent:__init__:130 - GraphAgent initialized
+2026-05-06 02:06:01 | INFO | __main__:initialize_components:256 - Creating Planner and Dispatcher...
+2026-05-06 02:06:01 | INFO | planner.dispatcher:__init__:71 - Dispatcher initialized with qa/credit/graph agents
+2026-05-06 02:06:01 | INFO | __main__:initialize_components:266 - Creating Financial Analysis Crew...
+2026-05-06 02:06:01 | INFO | __main__:initialize_components:269 - All components initialized successfully
+2026-05-06 02:06:01 | INFO | __main__:main:434 - Step 2: Indexing knowledge base
+2026-05-06 02:06:01 | INFO | __main__:index_knowledge_base:283 - Indexing 8 knowledge base documents...
+2026-05-06 02:06:01 | INFO | retrieval.hybrid_retriever:index_documents:196 - Indexing 8 documents
+2026-05-06 02:06:01 | INFO | retrieval.bm25_retriever:fit:143 - Fitting BM25 on 8 documents
+2026-05-06 02:06:01 | INFO | retrieval.bm25_retriever:fit:183 - BM25 fitted: vocab_size=170, avg_doc_len=37.8
+2026-05-06 02:06:01 | DEBUG | retrieval.milvus_client:insert:50 - In-memory store now has 8 documents
+2026-05-06 02:06:01 | INFO | retrieval.milvus_client:insert_documents:243 - Inserted 8 docs into in-memory fallback
+2026-05-06 02:06:01 | INFO | retrieval.hybrid_retriever:index_documents:230 - Successfully indexed 8 documents
+2026-05-06 02:06:01 | INFO | __main__:index_knowledge_base:293 - Knowledge base indexed. Stats: {'embedding_model_available': True, 'bm25_fitted': True, 'bm25_vocab_size': 170, 'reranker_available': True, 'milvus_stats': {'backend': 'in_memory', 'count': 8}}
+2026-05-06 02:06:01 | INFO | agents.qa_agent:answer:119 - QAAgent.answer: '农业科技企业申请贷款需要满足哪些条件？'
+2026-05-06 02:06:01 | INFO | retrieval.hybrid_retriever:retrieve:136 - HybridRetriever.retrieve: query='农业科技企业申请贷款需要满足哪些条件？...', top_k=5
+2026-05-06 02:06:01 | DEBUG | retrieval.hybrid_retriever:retrieve:146 - Hybrid search returned 8 raw results
+2026-05-06 02:06:01 | DEBUG | retrieval.rule_filter:filter:142 - Rule filter: 8 -> 8 documents
+2026-05-06 02:06:01 | DEBUG | retrieval.hybrid_retriever:retrieve:156 - After rule filtering: 8 results
+2026-05-06 02:06:02 | DEBUG | retrieval.reranker:_cross_encoder_rerank:111 - Cross-encoder reranked 8 -> 5 documents. Top score: 7.1053 if scores else 0
+2026-05-06 02:06:02 | INFO | retrieval.hybrid_retriever:retrieve:167 - Final reranked results: 5
+2026-05-06 02:06:02 | DEBUG | agents.qa_agent:answer:137 - Retrieved 5 documents for Q&A
+2026-05-06 02:06:02 | WARNING | agents.qa_agent:_call_claude:257 - Claude API call failed: "Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+2026-05-06 02:06:02 | INFO | agents.qa_agent:answer:119 - QAAgent.answer: '供应链保理融资的最高额度是多少？'
+2026-05-06 02:06:02 | INFO | retrieval.hybrid_retriever:retrieve:136 - HybridRetriever.retrieve: query='供应链保理融资的最高额度是多少？...', top_k=5
+2026-05-06 02:06:02 | DEBUG | retrieval.hybrid_retriever:retrieve:146 - Hybrid search returned 8 raw results
+2026-05-06 02:06:02 | DEBUG | retrieval.rule_filter:filter:142 - Rule filter: 8 -> 8 documents
+2026-05-06 02:06:02 | DEBUG | retrieval.hybrid_retriever:retrieve:156 - After rule filtering: 8 results
+2026-05-06 02:06:02 | DEBUG | retrieval.reranker:_cross_encoder_rerank:111 - Cross-encoder reranked 8 -> 5 documents. Top score: 7.9782 if scores else 0
+2026-05-06 02:06:02 | INFO | retrieval.hybrid_retriever:retrieve:167 - Final reranked results: 5
+2026-05-06 02:06:02 | DEBUG | agents.qa_agent:answer:137 - Retrieved 5 documents for Q&A
+2026-05-06 02:06:02 | WARNING | agents.qa_agent:_call_claude:257 - Claude API call failed: "Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+2026-05-06 02:06:02 | INFO | agents.graph_agent:analyze:144 - GraphAgent.analyze: 深圳绿色农业科技有限公司 in 农业科技
+2026-05-06 02:06:06 | WARNING | tools.graph_tools:_connect:167 - Neo4j not available: Couldn't connect to localhost:7687 (resolved to ('[::1]:7687', '127.0.0.1:7687')):
+Failed to establish connection to ResolvedIPv6Address(('::1', 7687, 0, 0)) (reason [WinError 10061] 由于目标计算机积极拒绝，无法连接。)
+Failed to establish connection to ResolvedIPv4Address(('127.0.0.1', 7687)) (reason [WinError 10061] 由于目标计算机积极拒绝，无法连接。). Using in-memory graph fallback.
+2026-05-06 02:06:06 | INFO | tools.graph_tools:_run:270 - Querying industry knowledge for: 农业科技
+2026-05-06 02:06:06 | WARNING | tools.financial_tools:_call_claude_streaming:105 - Claude API call failed: "Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted". Using mock response.
+2026-05-06 02:06:06 | DEBUG | agents.graph_agent:_query_industry:172 - Industry knowledge retrieved for: 农业科技
+2026-05-06 02:06:06 | INFO | tools.graph_tools:_run:356 - Finding supply chain relations for: 深圳绿色农业科技有限公司
+2026-05-06 02:06:06 | WARNING | tools.financial_tools:_call_claude_streaming:105 - Claude API call failed: "Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted". Using mock response.
+2026-05-06 02:06:06 | DEBUG | agents.graph_agent:_query_supply_chain:195 - Supply chain relations queried
+2026-05-06 02:06:06 | INFO | tools.graph_tools:_run:435 - Getting competitor analysis for: 深圳绿色农业科技有限公司 in 农业科技
+2026-05-06 02:06:06 | WARNING | tools.financial_tools:_call_claude_streaming:105 - Claude API call failed: "Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted". Using mock response.
+2026-05-06 02:06:06 | DEBUG | agents.graph_agent:_query_competitors:227 - Competitor analysis complete
+2026-05-06 02:06:06 | WARNING | tools.financial_tools:_call_claude_streaming:105 - Claude API call failed: "Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted". Using mock response.
+2026-05-06 02:06:06 | INFO | agents.graph_agent:analyze:163 - GraphAgent analysis complete for: 深圳绿色农业科技有限公司
+2026-05-06 02:06:06 | INFO | agents.credit_agent:assess:219 - Starting credit assessment for: 深圳绿色农业科技有限公司
+2026-05-06 02:06:06 | INFO | tools.financial_tools:_run:203 - Analyzing financial statements for: 深圳绿色农业科技有限公司
+2026-05-06 02:06:06 | WARNING | tools.financial_tools:_call_claude_streaming:105 - Claude API call failed: "Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted". Using mock response.
+2026-05-06 02:06:06 | INFO | tools.financial_tools:_run:210 - Financial analysis complete for: 深圳绿色农业科技有限公司
+2026-05-06 02:06:06 | DEBUG | agents.credit_agent:_run_financial_analysis:258 - Financial analysis complete
+2026-05-06 02:06:06 | INFO | tools.financial_tools:_run:279 - Calculating credit score for: 深圳绿色农业科技有限公司
+2026-05-06 02:06:06 | WARNING | tools.financial_tools:_call_claude_streaming:105 - Claude API call failed: "Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted". Using mock response.
+2026-05-06 02:06:06 | DEBUG | agents.credit_agent:_run_credit_score:277 - Credit score calculation complete
+2026-05-06 02:06:06 | INFO | tools.financial_tools:_run:334 - Assessing supply chain for: 深圳绿色农业科技有限公司
+2026-05-06 02:06:06 | WARNING | tools.financial_tools:_call_claude_streaming:105 - Claude API call failed: "Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted". Using mock response.
+2026-05-06 02:06:06 | DEBUG | agents.credit_agent:_run_supply_chain_assessment:296 - Supply chain assessment complete
+2026-05-06 02:06:06 | INFO | tools.financial_tools:_run:403 - Validating tax data for: 深圳绿色农业科技有限公司
+2026-05-06 02:06:06 | WARNING | tools.financial_tools:_call_claude_streaming:105 - Claude API call failed: "Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted". Using mock response.
+2026-05-06 02:06:06 | DEBUG | agents.credit_agent:_run_tax_validation:312 - Tax validation complete
+2026-05-06 02:06:06 | WARNING | tools.financial_tools:_call_claude_streaming:105 - Claude API call failed: "Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted". Using mock response.
+2026-05-06 02:06:06 | INFO | agents.credit_agent:assess:242 - Credit assessment complete for 深圳绿色农业科技有限公司: decision=conditional, score=650
+2026-05-06 02:06:06 | INFO | planner.planner:plan:195 - Planner.plan: '请对深圳绿色农业科技有限公司的300万贷款申请进行全面评估'
+2026-05-06 02:06:06 | WARNING | planner.planner:plan:207 - LLM planning failed: "Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted". Using heuristic fallback.
+2026-05-06 02:06:06 | INFO | planner.planner:_heuristic_plan:385 - Heuristic plan: DispatchPlan (2 steps, type=loan_application):
+  Step 0: [graph] analyze_industry
+  Step 1: [credit] assess (depends on: [0])
+2026-05-06 02:06:06 | INFO | planner.dispatcher:execute:100 - Dispatcher.execute: 2 steps
+2026-05-06 02:06:06 | INFO | planner.dispatcher:_execute_step:204 - Executing step 0: [graph] analyze_industry
+2026-05-06 02:06:06 | INFO | agents.graph_agent:analyze:144 - GraphAgent.analyze: 深圳绿色农业科技有限公司 in 农业科技
+2026-05-06 02:06:06 | INFO | tools.graph_tools:_run:270 - Querying industry knowledge for: 农业科技
+2026-05-06 02:06:06 | WARNING | tools.financial_tools:_call_claude_streaming:105 - Claude API call failed: "Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted". Using mock response.
+2026-05-06 02:06:06 | DEBUG | agents.graph_agent:_query_industry:172 - Industry knowledge retrieved for: 农业科技
+2026-05-06 02:06:06 | INFO | tools.graph_tools:_run:356 - Finding supply chain relations for: 深圳绿色农业科技有限公司
+2026-05-06 02:06:06 | WARNING | tools.financial_tools:_call_claude_streaming:105 - Claude API call failed: "Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted". Using mock response.
+2026-05-06 02:06:06 | DEBUG | agents.graph_agent:_query_supply_chain:195 - Supply chain relations queried
+2026-05-06 02:06:06 | INFO | tools.graph_tools:_run:435 - Getting competitor analysis for: 深圳绿色农业科技有限公司 in 农业科技
+2026-05-06 02:06:06 | WARNING | tools.financial_tools:_call_claude_streaming:105 - Claude API call failed: "Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted". Using mock response.
+2026-05-06 02:06:06 | DEBUG | agents.graph_agent:_query_competitors:227 - Competitor analysis complete
+2026-05-06 02:06:06 | WARNING | tools.financial_tools:_call_claude_streaming:105 - Claude API call failed: "Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted". Using mock response.
+2026-05-06 02:06:06 | INFO | agents.graph_agent:analyze:163 - GraphAgent analysis complete for: 深圳绿色农业科技有限公司
+2026-05-06 02:06:06 | INFO | planner.dispatcher:_execute_step:222 - Step 0 [graph] completed in 0.1s
+2026-05-06 02:06:06 | INFO | planner.dispatcher:_execute_step:204 - Executing step 1: [credit] assess
+2026-05-06 02:06:06 | INFO | agents.credit_agent:assess:219 - Starting credit assessment for: 深圳绿色农业科技有限公司
+2026-05-06 02:06:06 | INFO | tools.financial_tools:_run:203 - Analyzing financial statements for: 深圳绿色农业科技有限公司
+2026-05-06 02:06:06 | WARNING | tools.financial_tools:_call_claude_streaming:105 - Claude API call failed: "Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted". Using mock response.
+2026-05-06 02:06:06 | INFO | tools.financial_tools:_run:210 - Financial analysis complete for: 深圳绿色农业科技有限公司
+2026-05-06 02:06:06 | DEBUG | agents.credit_agent:_run_financial_analysis:258 - Financial analysis complete
+2026-05-06 02:06:06 | INFO | tools.financial_tools:_run:279 - Calculating credit score for: 深圳绿色农业科技有限公司
+2026-05-06 02:06:06 | WARNING | tools.financial_tools:_call_claude_streaming:105 - Claude API call failed: "Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted". Using mock response.
+2026-05-06 02:06:06 | DEBUG | agents.credit_agent:_run_credit_score:277 - Credit score calculation complete
+2026-05-06 02:06:06 | INFO | tools.financial_tools:_run:334 - Assessing supply chain for: 深圳绿色农业科技有限公司
+2026-05-06 02:06:06 | WARNING | tools.financial_tools:_call_claude_streaming:105 - Claude API call failed: "Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted". Using mock response.
+2026-05-06 02:06:06 | DEBUG | agents.credit_agent:_run_supply_chain_assessment:296 - Supply chain assessment complete
+2026-05-06 02:06:06 | INFO | tools.financial_tools:_run:403 - Validating tax data for: 深圳绿色农业科技有限公司
+2026-05-06 02:06:06 | WARNING | tools.financial_tools:_call_claude_streaming:105 - Claude API call failed: "Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted". Using mock response.
+2026-05-06 02:06:06 | DEBUG | agents.credit_agent:_run_tax_validation:312 - Tax validation complete
+2026-05-06 02:06:06 | WARNING | tools.financial_tools:_call_claude_streaming:105 - Claude API call failed: "Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted". Using mock response.
+2026-05-06 02:06:06 | INFO | agents.credit_agent:assess:242 - Credit assessment complete for 深圳绿色农业科技有限公司: decision=conditional, score=650
+2026-05-06 02:06:06 | INFO | planner.dispatcher:_execute_step:222 - Step 1 [credit] completed in 0.1s
+2026-05-06 02:06:06 | WARNING | planner.dispatcher:_synthesize_results:342 - Claude synthesis failed: "Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+2026-05-06 02:06:06 | INFO | planner.dispatcher:execute:169 - Dispatcher complete: 2 steps done, 0 errors, 0.1s total
+2026-05-06 02:06:06 | INFO | crews.financial_crew:process_loan_application:230 - FinancialCrew: Processing loan application for 深圳绿色农业科技有限公司
+2026-05-06 02:06:06 | WARNING | crews.financial_crew:_run_research_phase:267 - Research phase - industry failed: 'FinancialAnalysisCrew' object has no attribute '_agents'
+2026-05-06 02:06:06 | INFO | tools.graph_tools:_run:356 - Finding supply chain relations for: 深圳绿色农业科技有限公司
+2026-05-06 02:06:06 | WARNING | tools.financial_tools:_call_claude_streaming:105 - Claude API call failed: "Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted". Using mock response.
+2026-05-06 02:06:06 | INFO | tools.graph_tools:_run:435 - Getting competitor analysis for: 深圳绿色农业科技有限公司 in 农业科技
+2026-05-06 02:06:06 | WARNING | tools.financial_tools:_call_claude_streaming:105 - Claude API call failed: "Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted". Using mock response.
+2026-05-06 02:06:06 | INFO | crews.financial_crew:process_loan_application:234 - Research phase complete
+2026-05-06 02:06:06 | WARNING | crews.financial_crew:_run_analysis_phase:311 - Analysis phase - financial failed: 'FinancialAnalysisCrew' object has no attribute '_agents'
+2026-05-06 02:06:06 | INFO | tools.financial_tools:_run:279 - Calculating credit score for: 深圳绿色农业科技有限公司
+2026-05-06 02:06:06 | WARNING | tools.financial_tools:_call_claude_streaming:105 - Claude API call failed: "Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted". Using mock response.
+2026-05-06 02:06:06 | INFO | tools.financial_tools:_run:403 - Validating tax data for: 深圳绿色农业科技有限公司
+2026-05-06 02:06:06 | WARNING | tools.financial_tools:_call_claude_streaming:105 - Claude API call failed: "Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted". Using mock response.
+2026-05-06 02:06:06 | INFO | tools.financial_tools:_run:334 - Assessing supply chain for: 深圳绿色农业科技有限公司
+2026-05-06 02:06:07 | WARNING | tools.financial_tools:_call_claude_streaming:105 - Claude API call failed: "Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted". Using mock response.
+2026-05-06 02:06:07 | INFO | crews.financial_crew:process_loan_application:238 - Analysis phase complete
+2026-05-06 02:06:07 | ERROR | crews.financial_crew:_run_report_phase:388 - Report phase failed: 'FinancialAnalysisCrew' object has no attribute '_agents'
+2026-05-06 02:06:07 | INFO | crews.financial_crew:process_loan_application:242 - Report phase complete: decision=conditional
